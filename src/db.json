@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "password",
+      "token": "mock-token-123456"
+    },
+    {
+      "id": "0515",
+      "username": "admin44",
+      "password": "apssword"
+    }
+  ],
+  "userInfo": {
+    "name": "John Doe",
+    "email": "johndoe@example.com"
+  }
+}
