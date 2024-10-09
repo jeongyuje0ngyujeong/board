@@ -1,0 +1,35 @@
+{
+  "name": "mini_home_p",
+  "version": "1.0.0",
+  "description": "nodejs_practice",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+
+    "_comment": "nodemon app: 서버 코드에 수정 사항이 생길 때마다 자동으로 재시작 배포 전 삭제",
+    "start": "nodemon app"
+  },
+  "keywords": [
+    "node",
+    "practice"
+  ],
+  "author": "jeongyuje0ngyujeong",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "express-session": "^1.18.1",
+    "mongodb": "^6.9.0",
+    "mongoose": "^8.7.0",
+    "morgan": "^1.10.0",
+    "notenv": "^2.0.3",
+    "nunjucks": "^3.2.4",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
