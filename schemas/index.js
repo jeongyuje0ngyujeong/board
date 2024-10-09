@@ -1,3 +1,5 @@
+// MongoDB 연결 담당 파일
+
 const mongoose = require('mongoose');
 const connect = () => {
     if (process.env.NODE_ENV !== 'production') {
