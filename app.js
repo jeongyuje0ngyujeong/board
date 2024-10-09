@@ -2,12 +2,17 @@ const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
 const nunjucks = require('nunjucks');
+const cors = require('cors');
 
 const connect = require('./schemas');
 
 const app = express()
-app.set('port', process.env.PORT || 5000);
+const port = 3000;
+app.listen(port, '0.0.0.0', () => {
+    console.log(`Server running on http://localhost:${port}`);
+});
 
+app.use(cors());
 
 app.get('/', function (req, res) {
     res.send('Hello World !!')
