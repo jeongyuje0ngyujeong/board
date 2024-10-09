@@ -1,5 +1,6 @@
-//스키마 설계 담당 파일
+//User 스키마 설계 담당 파일
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
 // 게시판의 하위 문서 스키마 (제목과 내용)
 const boardSchema = new mongoose.Schema({
@@ -25,7 +26,20 @@ const userSchema = new mongoose.Schema({
     visitorBook: [visitorBookSchema]  // 방명록 배열 (하위 문서)
 });
 
+userSchema.pre("save", async function (next) {
+    if (!this.isModified("password")) 
+        return next();
+    
+    const salt = await bcrypt.genSalt(10);
+    this.password = await bcrypt.hash(this.password, salt);
+    next();
+})
+
+//사용자가 입력한 비밀번호와 데이터베이스에 저장된 암호화된 비밀번호를 비교
+userSchema.methods.comparePassword = function (candidatePassword) {
+    return bcrypt.compare(candidatePassword, this.password);
+};
+
 // 몽구스 모델 생성
 const User = mongoose.model('User', userSchema);
-
 module.exports = User;
