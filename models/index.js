@@ -3,16 +3,18 @@
 const mongoose = require('mongoose');
 const connect = () => {
     if (process.env.NODE_ENV !== 'production') {
-        mongoose.set('debug', true);
+        mongoose.set('debug', false);
     }
 
-    mongoose.connect('mongodb://jeongyuje0ngyujeong:bbujeong@localhost:27017/admin', {
+    //MongoDB 연결
+    mongoose.connect('mongodb://jeongyuje0ngyujeong:bbujeong@localhost:27017', {
         dbName: 'minihomeP',
         useNewUrlParser: true,
+        useUnifiedTopology: true,
     }).then(() => {
-        console.log("몽고디비 연결 성공!");
+        console.log('MongoDB connected');
     }).catch((err) => {
-        console.error("몽고디비 연결 실패", err);
+        console.log('MongoDB connection error:', err);
     });
 };
 

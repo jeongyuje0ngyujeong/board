@@ -4,7 +4,7 @@ const User = require('../models/user');
 
 const opts = {
     jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-    secretOrKey: '', // 이 비밀키는 JWT 생성 및 검증에 사용됨
+    secretOrKey: process.env.JWT_SECRET, // 이 비밀키는 JWT 생성 및 검증에 사용됨
 };
 
 module.exports = (passport) => {
