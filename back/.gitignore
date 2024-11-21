@@ -1,0 +1,13 @@
+# .env 파일 (환경 변수)
+.env
+
+# Node.js 모듈 폴더
+node_modules/
+
+# 로그 파일
+logs/
+*.log
+
+# 운영 체제에서 자동 생성되는 파일들 (macOS, Windows 등)
+.DS_Store
+Thumbs.db
