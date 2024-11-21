@@ -21,7 +21,7 @@ export default function Register() {
     const handleRegi = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.post('http://192.168.1.227:5001/auth/register', {
+            const response = await axios.post('http://localhost:5001/auth/register', {
                 username,
                 password
             });
@@ -38,7 +38,7 @@ export default function Register() {
     const doubleCheck = async (event) => {
         if (username.length>0){
             try {
-            const response = await axios.post('http://192.168.1.227:5001/auth/register/check', {
+            const response = await axios.post('http://localhost:5001/auth/register/check', {
                 username
             });
             

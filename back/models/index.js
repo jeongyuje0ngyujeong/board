@@ -7,7 +7,7 @@ const connect = () => {
     }
 
     //MongoDB 연결
-    mongoose.connect('mongodb://jeongyuje0ngyujeong:bbujeong@localhost:27017', {
+    mongoose.connect('mongodb://localhost:27017', {
         dbName: 'minihomeP',
         useNewUrlParser: true,
         useUnifiedTopology: true,
@@ -16,6 +16,9 @@ const connect = () => {
     }).catch((err) => {
         console.log('MongoDB connection error:', err);
     });
+
+    const TestModel = mongoose.model('Test', new mongoose.Schema({ name: String }));
+    TestModel.create({ name: 'Sample' });
 };
 
 mongoose.connection.on('error', (error) => {

@@ -11,7 +11,7 @@ function NewPost(props){
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.post('http://192.168.1.227:5001/post/post', {
+            const response = await axios.post('http://localhost:5001/post/post', {
                 title,
                 content,
                 userId
@@ -21,7 +21,6 @@ function NewPost(props){
                 alert('등록 성공');
                 setTitle('');
                 setContents('');
-
                 // window.location.reload();
             }
           
@@ -70,7 +69,7 @@ function ShowPost(props){
     const lis = [];
     
     const fetchPost = async () => {
-        const response = await axios.get('http://192.168.1.227:5001/post/allpost');
+        const response = await axios.get('http://localhost:5001/post/allpost');
         return response.data;
     };
     

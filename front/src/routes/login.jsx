@@ -14,7 +14,7 @@ export default function Login() {
     const handleLogin = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.post('http://192.168.1.227:5001/auth/login', {
+            const response = await axios.post('http://localhost:5001/auth/login', {
                 username,
                 password
             });

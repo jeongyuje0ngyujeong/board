@@ -26,7 +26,7 @@ function EditProfile(props){
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.post('http://192.168.1.227:5001/post/user_info', {
+            const response = await axios.post('http://localhost:5001/post/user_info', {
                 bio,
                 feeling,
                 email,
@@ -89,7 +89,7 @@ function ShowPost(props){
     const lis = [];
     
     const fetchPost = async () => {
-        const response = await axios.get('http://192.168.1.227:5001/post/allpost');
+        const response = await axios.get('http://localhost:5001/post/allpost');
         return response.data;
     };
     

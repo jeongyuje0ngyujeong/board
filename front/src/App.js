@@ -4,9 +4,10 @@ import { Outlet } from "react-router-dom";
 import {useEffect, useState} from 'react';
 import Navbar from './Navbar';
 import axios from 'axios';
+import './index.css'; 
 
 const fetchUsers = async () => {
-  const response = await axios.get('http://192.168.1.227:5001/auth/user');
+  const response = await axios.get('http://localhost:5001/auth/user');
   return response.data; // 유저 데이터 반환
 };
 
@@ -26,7 +27,7 @@ function App() {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get(`http://192.168.1.227:5001/auth/user/${userId}`, {
+        const response = await axios.get(`http://localhost:5001/auth/user/${userId}`, {
           headers: {
             Authorization: `Bearer ${token}`, 
           },
